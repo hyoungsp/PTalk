@@ -1,0 +1,6 @@
+framework module Pods_PTalk {
+  umbrella header "Pods-PTalk-umbrella.h"
+
+  export *
+  module * { export * }
+}
