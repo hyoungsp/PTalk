@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8an-5N-jj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="17"/>
+            <point key="canvasLocation" x="1410" y="-6"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="1nU-lo-G0b">
@@ -131,10 +131,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YK0-5w-zyg" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="16" y="168" width="343" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_to_photos" translatesAutoresizingMaskIntoConstraints="NO" id="okr-7H-RrX">
+                                <rect key="frame" x="137" y="81" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8OP-eq-KwM"/>
+                                    <constraint firstAttribute="width" constant="100" id="SO5-kF-VSv"/>
+                                    <constraint firstAttribute="height" constant="100" id="r7b-Ng-zBf"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YK0-5w-zyg" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="16" y="260" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tcE-2P-Cl2"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -149,9 +156,9 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0h-1n-CM5" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="16" y="230" width="343" height="40"/>
+                                <rect key="frame" x="16" y="322" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="09Q-ny-xm4"/>
+                                    <constraint firstAttribute="height" constant="40" id="1iS-o8-O1B"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -166,9 +173,9 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-l0-nZb" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="16" y="288" width="343" height="40"/>
+                                <rect key="frame" x="16" y="380" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MEP-Sc-ObL"/>
+                                    <constraint firstAttribute="height" constant="40" id="6ah-dN-SSc"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -183,18 +190,18 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBb-9G-XHo">
-                                <rect key="frame" x="16" y="351" width="343" height="40"/>
+                                <rect key="frame" x="16" y="443" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="swv-yO-M1p"/>
+                                    <constraint firstAttribute="height" constant="40" id="nN5-tF-Qmg"/>
                                 </constraints>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0m-sv-goB">
-                                <rect key="frame" x="16" y="406" width="343" height="40"/>
+                                <rect key="frame" x="16" y="498" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="2Bt-ty-aYH"/>
+                                    <constraint firstAttribute="height" constant="40" id="2v2-Fk-0WH"/>
                                 </constraints>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,27 +210,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tc2-l0-nZb" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="0EQ-5Z-t4T"/>
-                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="w0m-sv-goB" secondAttribute="trailing" constant="16" id="2IM-oM-cnN"/>
-                            <constraint firstItem="w0m-sv-goB" firstAttribute="top" secondItem="vBb-9G-XHo" secondAttribute="bottom" constant="15" id="2Jb-hc-xFT"/>
-                            <constraint firstItem="R0h-1n-CM5" firstAttribute="top" secondItem="YK0-5w-zyg" secondAttribute="bottom" constant="22" id="AJY-2W-37s"/>
-                            <constraint firstItem="Tc2-l0-nZb" firstAttribute="top" secondItem="R0h-1n-CM5" secondAttribute="bottom" constant="18" id="Nyo-Oc-6zO"/>
-                            <constraint firstItem="vBb-9G-XHo" firstAttribute="top" secondItem="Tc2-l0-nZb" secondAttribute="bottom" constant="23" id="Uy3-6g-ke3"/>
-                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="YK0-5w-zyg" secondAttribute="trailing" constant="16" id="WJ9-4i-C9h"/>
-                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="R0h-1n-CM5" secondAttribute="trailing" constant="16" id="d0G-Pk-0ym"/>
-                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="Tc2-l0-nZb" secondAttribute="trailing" constant="16" id="d2C-2p-lwk"/>
-                            <constraint firstItem="YK0-5w-zyg" firstAttribute="top" secondItem="d0I-Ja-sgd" secondAttribute="top" constant="148" id="dE6-Wa-8qG"/>
-                            <constraint firstItem="w0m-sv-goB" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="gke-XG-oAy"/>
-                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="vBb-9G-XHo" secondAttribute="trailing" constant="16" id="h4f-pb-AhH"/>
-                            <constraint firstItem="YK0-5w-zyg" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="hGK-zA-GTG"/>
-                            <constraint firstItem="R0h-1n-CM5" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="j2s-KH-9ve"/>
-                            <constraint firstItem="vBb-9G-XHo" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="ksA-Ln-XbG"/>
+                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="Tc2-l0-nZb" secondAttribute="trailing" constant="16" id="1Tl-Rg-BX0"/>
+                            <constraint firstItem="vBb-9G-XHo" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="3gp-Xs-CgU"/>
+                            <constraint firstItem="YK0-5w-zyg" firstAttribute="top" secondItem="okr-7H-RrX" secondAttribute="bottom" constant="79" id="8F6-hP-3GF"/>
+                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="YK0-5w-zyg" secondAttribute="trailing" constant="16" id="9HY-T8-MIF"/>
+                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="vBb-9G-XHo" secondAttribute="trailing" constant="16" id="CUw-mE-oag"/>
+                            <constraint firstItem="okr-7H-RrX" firstAttribute="top" secondItem="d0I-Ja-sgd" secondAttribute="top" constant="61" id="Dku-rk-ODB"/>
+                            <constraint firstItem="Tc2-l0-nZb" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="FQC-SJ-H9a"/>
+                            <constraint firstItem="vBb-9G-XHo" firstAttribute="top" secondItem="Tc2-l0-nZb" secondAttribute="bottom" constant="23" id="IYt-RF-2Dt"/>
+                            <constraint firstItem="w0m-sv-goB" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="OIj-gY-PFj"/>
+                            <constraint firstItem="R0h-1n-CM5" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="TQc-DM-elD"/>
+                            <constraint firstItem="Tc2-l0-nZb" firstAttribute="top" secondItem="R0h-1n-CM5" secondAttribute="bottom" constant="18" id="YD5-x9-QEj"/>
+                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="R0h-1n-CM5" secondAttribute="trailing" constant="16" id="YK0-mv-HQl"/>
+                            <constraint firstItem="d0I-Ja-sgd" firstAttribute="trailing" secondItem="w0m-sv-goB" secondAttribute="trailing" constant="16" id="Yec-yi-soQ"/>
+                            <constraint firstItem="YK0-5w-zyg" firstAttribute="leading" secondItem="d0I-Ja-sgd" secondAttribute="leading" constant="16" id="YiT-hp-rO1"/>
+                            <constraint firstItem="okr-7H-RrX" firstAttribute="centerX" secondItem="hrc-7g-IQK" secondAttribute="centerX" id="ZV1-YI-eXC"/>
+                            <constraint firstItem="w0m-sv-goB" firstAttribute="top" secondItem="vBb-9G-XHo" secondAttribute="bottom" constant="15" id="o4y-sW-qSL"/>
+                            <constraint firstItem="R0h-1n-CM5" firstAttribute="top" secondItem="YK0-5w-zyg" secondAttribute="bottom" constant="22" id="smo-0r-cTt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d0I-Ja-sgd"/>
                     </view>
                     <connections>
                         <outlet property="cancel" destination="w0m-sv-goB" id="PRe-yr-GlB"/>
                         <outlet property="email" destination="YK0-5w-zyg" id="KhJ-Q8-eF5"/>
+                        <outlet property="imageView" destination="okr-7H-RrX" id="ltX-DG-NPY"/>
                         <outlet property="name" destination="R0h-1n-CM5" id="8Ti-mh-EhH"/>
                         <outlet property="password" destination="Tc2-l0-nZb" id="j4x-dz-eNT"/>
                         <outlet property="signup" destination="vBb-9G-XHo" id="BKh-74-7jB"/>
@@ -231,10 +241,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYP-Ty-CNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983.20000000000005" y="694.90254872563719"/>
+            <point key="canvasLocation" x="1409" y="677"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_add_to_photos" width="24" height="24"/>
         <image name="loading_icon" width="128" height="128"/>
     </resources>
 </document>

@@ -9,8 +9,10 @@
 import UIKit
 import Firebase
 
-class SignupViewController: UIViewController {
+
+class SignupViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -19,6 +21,7 @@ class SignupViewController: UIViewController {
     
     let remoteconfig = RemoteConfig.remoteConfig()
     var color: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,9 @@ class SignupViewController: UIViewController {
         color = remoteconfig["splash_background"].stringValue
         statusBar.backgroundColor = UIColor(hex: color!)
         
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
+        
         signup.backgroundColor = UIColor(hex: color!)
         cancel.backgroundColor = UIColor(hex: color!)
         signup.addTarget(self, action: #selector(signupEvent), for: .touchUpInside)
@@ -41,11 +47,40 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // open up the image
+    @objc func imagePicker() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // And we store the photo data into Firebase
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func signupEvent() {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, err) in
             let uid = user?.uid
-            Database.database().reference().child("users").child(uid!).setValue(["name": self.name.text!])
+            
+            let image = UIImageJPEGRepresentation(self.imageView.image!, 0.1)
+            
+            Storage.storage().reference().child("userImages").child(uid!).putData(image!, metadata: nil, completion: { (data, error) in
+                let imageUrl = data?.downloadURL()?.absoluteString
+                Database.database().reference().child("users").child(uid!).setValue(["userName":self.name.text!,"profileImageUrl":imageUrl])
+                
+            })
+            
+            
+            
         }
+
     }
     
     @objc func cancelEvent() {
